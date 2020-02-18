@@ -6,7 +6,6 @@ function renderToys() {
     .then(resp => resp.json())
     .then(function(allToys) {
       allToys.forEach(toy => { 
-        debugger
         buildCard(toy) 
       });
     })
@@ -76,13 +75,16 @@ function buildCard(toy){
   let toyImage = document.createElement("img");
   let likes = document.createElement("p");
   let likeBtn = document.createElement("button");
+  card.appendChild(toyName);
+  card.appendChild(toyImage);
+  card.appendChild(likes);
+  card.appendChild(likeBtn);
   toyName.innerText = toy.name;
   toyImage.setAttribute("class", "toy-avatar");
   toyImage.src = toy.image;
   likes.innerText = `${toy.likes} Likes`;
   likeBtn.setAttribute("class", "like-btn");
   likeBtn.innerText = `Like ${toy.name}`;
-  card.append(toyName, toyImage, likes, likeBtn);
 
   likeBtn.addEventListener("click", function(e) {
     event.preventDefault();
