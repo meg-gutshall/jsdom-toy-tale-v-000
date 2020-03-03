@@ -1,4 +1,3 @@
-const toyCollection = document.getElementById("toy-collection");
 let addToy = false
 
 function renderToys() {
@@ -67,6 +66,7 @@ function addLike(event) {
 
 // Build card that encapsulates toy object for display
 function buildCard(toy){
+  const toyCollection = document.getElementById("toy-collection");
   const card = document.createElement("div")
   card.setAttribute("class", "card");
   card.setAttribute("id", `card-${toy.id}`);
