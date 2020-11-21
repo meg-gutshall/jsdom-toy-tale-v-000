@@ -85,7 +85,7 @@ function buildCard(toy){
   card.append(toyName, toyImage, likes, likeBtn);
 
   likeBtn.addEventListener("click", function(e) {
-    event.preventDefault();
+    e.preventDefault();
     addLike(e);
   });
   
@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (addToy) {
       toyForm.style.display = "block";
       toyForm.addEventListener("submit", function(e) {
-        event.preventDefault();
-        addNewToy(event.target);
+        e.preventDefault();
+        addNewToy(e.target);
       })
     } else {
       toyForm.style.display = "none";
